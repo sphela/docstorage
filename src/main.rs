@@ -112,39 +112,3 @@ fn main() {
         .expect("rt run");
 }
 
-/*
-
-    let addr = ([127, 0, 0, 1], 3000).into();
-
-    // Using a !Send request counter is fine on 1 thread...
-    let my_string = String::from("foo");
-    let counter = Rc::new(RefCell::new(my_string));
-
-    let new_service = move || {
-        // For each connection, clone the counter to use in our service...
-        let cnt = counter.clone();
-
-        service_fn_ok(move |_| {
-            let prev = cnt.borrow_mut();
-            Response::new(Body::from(format!("Request count: {}", prev)))
-        })
-    };
-
-    // Since the Server needs to spawn some background tasks, we needed
-    // to configure an Executor that can spawn !Send futures...
-
-
-    let server = Server::bind(&addr)
-        .executor(exec)
-        .serve(new_service)
-        .map_err(|e| eprintln!("server error: {}", e));
-
-    println!("Listening on http://{}", addr);
-
-    current_thread::Runtime::new()
-        .expect("rt new")
-        .spawn(server)
-        .run()
-        .expect("rt run");
-
-*/
