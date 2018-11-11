@@ -5,7 +5,7 @@ version = "0.1.0"
 
 [dependencies]
 clap = "2.32.0"
-hyper = "0.12.13"
+hyper = "0.12.14"
 pretty_env_logger = "0.2.5"
 serde = "1.0.80"
 serde_derive = "1.0.80"
