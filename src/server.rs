@@ -1,4 +1,4 @@
-use configure;
+use crate::configure;
 
 use std::fs::File;
 use std::io::prelude::*;
